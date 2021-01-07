@@ -22,15 +22,15 @@
 17. Advanced OOP, SOLID, Design Patterns, Architecture
 18. Misc: Logging, ORM (Sequelize), GraphQL
 
-Front-end roadmap
-https://github.com/kamranahmedse/developer-roadmap/blob/master/img/frontend.png?year-2020-2
-Back-end
-https://github.com/kamranahmedse/developer-roadmap/blob/master/img/backend.png?year-2020-2
-Devops
-https://github.com/kamranahmedse/developer-roadmap/blob/master/img/devops.png
+Front-end roadmap <br>
+https://github.com/kamranahmedse/developer-roadmap/blob/master/img/frontend.png?year-2020-2 <br>
+Back-end <br>
+https://github.com/kamranahmedse/developer-roadmap/blob/master/img/backend.png?year-2020-2 <br>
+Devops <br>
+https://github.com/kamranahmedse/developer-roadmap/blob/master/img/devops.png <br>
 
-Recursos para aprender
-https://developer.mozilla.org/en-US/docs/Web/HTML
-https://www.w3schools.com/
+Recursos para aprender <br>
+https://developer.mozilla.org/en-US/docs/Web/HTML <br>
+https://www.w3schools.com/ <br>
 
 > Importantes estos primeros puntos: <br> > ![](https://raw.githubusercontent.com/CarlosGomezDev/Study-notes/main/src/img/00-1.png)
