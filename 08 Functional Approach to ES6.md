@@ -40,7 +40,7 @@ Using `const` you cannot redefine variables, but you can redefine *object* prope
 - ESLint helps you catch stylistic erros in your code, like accidental mutations
 - Multiple plugins can be applied to ESLint, we are going to use ESLint-plugin-immutable
 
-####Functions that return functions
+#### Functions that return functions
 - **Blackbox**: function that gets an input, and return something different as output, without knowing how
 	- A blackbox can return another blackbox
 - When we define a function, it has access to the internal function of its parent
