@@ -74,3 +74,32 @@ let bob = a => a + 100;
 //To return an object, we need parethesis
 a => ({foo: "a"})
 ```
+
+#### Inmediately Invoked Function Expression (IIFE)
+Also known as Self-Executing Anonymous Function
+Runs as soon as it is defined, and it has two parts:
+1. The anonymous function enclosed with `Grouping Operator ()`
+2. The function invocation with `()`, through which the JavaScript engine will interpret the anonymous function in part 1.
+
+```javascript
+(function () {
+    statements
+})();
+
+(function () {
+    var aName = "Barry";
+})();
+// Variable aName is not accessible from the outside scope
+aName // throws "Uncaught ReferenceError: aName is not defined"
+```
+
+Assigning the IIFE to a variable stores the function's return value, not the function definition itself.
+
+```javascript
+var result = (function () {
+    var name = "Barry";
+    return name;
+})();
+// Immediately creates the output:
+result; // "Barry"
+```
