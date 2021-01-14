@@ -48,8 +48,8 @@ public method drivevehicle(): void
 private licenseid as string
 private vehicle as vehicle
 -
-public method setlicence (take license as string): void
-public method getlicense (): void
+public method setlicence (take licenseid as string): void
+public method getlicense (): string
 public method setvehicle (take a vehicle as vehicle): void
 public method getvehicle(): vehicle
 private method candrivethisvehicle(): boolean
