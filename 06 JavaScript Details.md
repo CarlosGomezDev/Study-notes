@@ -68,7 +68,7 @@ HTML > Tag > Attribute = Value > textNode or another Tag
 - Compose = putting two functions together, where the output of 1 function is the input of another function
   - Seems to be a function that contains multiple functions and can call all of those in a chain, needs more research
 
-![](https://raw.githubusercontent.com/CarlosGomezDev/Study-notes/main/src/img/02-1.png)
+![](src/img/02-1.png)
 
 - Calling / Invoking a method = object.functionInsideObject
 - Callback function = function that is called after a condition is met or event is triggered

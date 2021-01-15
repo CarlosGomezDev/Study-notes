@@ -28,7 +28,7 @@
 
 #### Diagrama UML de clases
 - Se usa para representar un objeto
-	![](https://raw.githubusercontent.com/CarlosGomezDev/Study-notes/main/src/img/09-1.png)
+	![](src/img/09-1.png)
 
 - Una persona no necesariamente sabe manejar
 - Hay que pasarle una instancia de Idriver, entonces la persona hereda la capacidad de manejar

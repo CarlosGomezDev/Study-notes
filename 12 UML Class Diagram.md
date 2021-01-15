@@ -26,7 +26,7 @@ parameters can be `in`, `out`, or `inout` (direction caller > method)
 `out` = passed to caller by method
 `inout` = possibly passed by caller, modified by method, and returned
 
-![](https://raw.githubusercontent.com/CarlosGomezDev/Study-notes/main/src/img/12-1.png)
+![](src/img/12-1.png)
 
 Abstract Person
 -

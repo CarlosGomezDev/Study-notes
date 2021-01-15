@@ -33,4 +33,4 @@ Recursos para aprender <br>
 https://developer.mozilla.org/en-US/docs/Web/HTML <br>
 https://www.w3schools.com/ <br>
 
-> Importantes estos primeros puntos: <br> > ![](https://raw.githubusercontent.com/CarlosGomezDev/Study-notes/main/src/img/00-1.png)
+> Importantes estos primeros puntos: <br> > ![](src/img/00-1.png)

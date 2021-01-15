@@ -13,7 +13,7 @@ https://www.youtube.com/watch?t=2&v=hdI2bqOjy3c
   - Interacting with server (_node.js_)
 - Very powerful client-side language
 
-![](https://raw.githubusercontent.com/CarlosGomezDev/Study-notes/main/src/img/03-1.png)
+![](src/img/03-1.png)
 
 Initialize Variables
 
@@ -56,7 +56,7 @@ Primitive Data Types
   - `null`
   - `undefined`
 
-![](https://raw.githubusercontent.com/CarlosGomezDev/Study-notes/main/src/img/03-2.png)
+![](src/img/03-2.png)
 
 Old Concatenate
 
@@ -129,13 +129,13 @@ Constructor Functions - Old
 - You can use that function to create a new object
 - `const name2= new Name(param1, param2,…)`
 
-![](https://raw.githubusercontent.com/CarlosGomezDev/Study-notes/main/src/img/03-3.png)
+![](src/img/03-3.png)
 
 Class Functions - Better
 
 - Prettier way to do constructor functions
 
-![](https://raw.githubusercontent.com/CarlosGomezDev/Study-notes/main/src/img/03-4.png)
+![](src/img/03-4.png)
 
 DOM manipulation (Javascript DOM Crash course, 4 videos)
 
@@ -163,7 +163,7 @@ DOM manipulation (Javascript DOM Crash course, 4 videos)
    2. `click`, `mouseover`, `mouseout`, `submit`, etc.
 
 Storage
-![](https://raw.githubusercontent.com/CarlosGomezDev/Study-notes/main/src/img/03-5.png)
+![](src/img/03-5.png)
 
 - LocalStorage and sessionStorage
   - localStorage.setItem('key','value'),

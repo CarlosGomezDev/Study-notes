@@ -13,7 +13,7 @@ https://www.youtube.com/watch?v=UB1O30fR-EE
 - `<tag>content</tag>`, it has start and end tags
 - Some tags are used alone like `<br>`
 
-![](https://raw.githubusercontent.com/CarlosGomezDev/Study-notes/main/src/img/01-1.png)
+![](src/img/01-1.png)
 
 - `<head>` is used by Google to gather information about the page
 - `<!DOCTYPE html>` is the standard document format for HTML5, other HTML versions have different types
@@ -50,7 +50,7 @@ HTML5 Semantic Tags
 - `<summary>`
 - `<time>`
 
-![](https://raw.githubusercontent.com/CarlosGomezDev/Study-notes/main/src/img/01-2.png)
+![](src/img/01-2.png)
 
 HTML5 - Best Practices
 

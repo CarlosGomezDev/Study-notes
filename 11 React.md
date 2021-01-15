@@ -12,7 +12,9 @@
  - Think about how UI should look at any given moment, instead of how to change it over time.
   - UI is just a series of snapshots one after the other.
  ```javascript
- // This example creates a whole new element every tick(), but only the textnode is updated in the DOM by ReactDOM because it is the only thing changing
+ // This example creates a whole new element every tick(),
+ // but only the textnode is updated in the DOM by ReactDOM
+ // because it is the only thing changing
  function tick() {
   const element = (
     <div>
@@ -211,7 +213,7 @@ this.setState((state, props) => ({
   }
 ```
 
-### React Toolkits
+#### React Toolkits
 One of the most common ways of building react is using toolkits
 
 **1. create-react-app**, for new single-page applications.

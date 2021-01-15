@@ -14,14 +14,14 @@ Cascading Stylesheets
   - You can reference html tags (h1, p) or custom classes and IDs
   - External CSS: linking external .css file (Recommended to debloat .html)
 
-![](https://raw.githubusercontent.com/CarlosGomezDev/Study-notes/main/src/img/02-1.png)
+![](src/img/02-1.png)
 
 - There are web-safe fonts like Arial and Helvetica that can be applied simply by calling them
   - Custom fonts would need to be downloaded to the folder structure and loaded on page-load
 - Margins can be negative, or auto.
 - Padding cannot be negative nor auto.
 
-![](https://raw.githubusercontent.com/CarlosGomezDev/Study-notes/main/src/img/02-2.png)
+![](src/img/02-2.png)
 
 Ways to declares values for a square (content, padding, border, marging):
 
