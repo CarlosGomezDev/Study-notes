@@ -19,6 +19,7 @@ Taking a large number of complex ideas, and organizing them in a coherent way (g
 | :------------ | :------------ |
 | Imperative | Declarative |
 | "How" | "What" |
+| You tell the compiler <br> what you want to happen <br> step by step | You write code that tells <br> describes what you want <br> but not how to get it |
 |  to make a house, need to <br> pour foundation, build 4 walls, <br>build the roof supported by the wall | foundation, 4 walls, roof |
 | set x to 0, add 1st number to x, <br>repeat adding all number, <br>divide x by length of array | x is the sum of all <br>numbers in array, <br>divided by length of array |
 
