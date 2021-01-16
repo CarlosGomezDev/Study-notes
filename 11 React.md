@@ -212,6 +212,52 @@ this.setState((state, props) => ({
     });
   }
 ```
+#### Handling Events
+Similar to DOM events, using JSX syntax.
+- To prevent default behavior in React. You must call `preventDefault` explicitly on the event that just happened.
+- Reacts grabs the browser native `event` and wraps it in a browser agnostic `SyntheticEvent`.
+  - This is completely abstracted, simply continue using `event` as always inside React.
+- Notice in React you don't generally use `addEventListener`, instead you just provide a listener when creating an element like adding `onClick={this.functionName}` when creating a button.
+```javascript
+// in html
+<button onclick="activateLasers()">Activate Lasers</button>
+// in javascript with JSX
+<button onClick={activateLasers}>Activate Lasers</button>
+// adding listener when initially rendering the element
+class Toggle extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {isToggleOn: true};
+    this.handleClick = this.handleClick.bind(this);
+    // This binding is necessary to make `this` work in the callback
+    // Generally, if you refer to a method without () after it,
+    // such as onClick={this.handleClick}, you should bind that method.
+  }
+  handleClick() {
+    this.setState(state => ({ isToggleOn: !state.isToggleOn }));
+  }
+  render() {
+    return (
+      <button onClick={this.handleClick}>{this.state.isToggleOn ? 'ON' : 'OFF'}</button>
+    );
+  }
+}
+ReactDOM.render(<Toggle />,document.getElementById('root'));
+// adding listener when initially rendering the element
+```
+#### Passing Arguments to event handlers
+```javascript
+<button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
+<button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
+// The above two lines are equivalent, and use arrow functions
+// and Function.prototype.bind respectively.
+```
+
+#### Conditionally Rendering a Component
+You can use regular IFs `if (){} else if (){} else (){}`,
+Short Circuits `condition && expression`, expression is never evaluated until condition is true
+Conditional Ternary operator ` condition ? valueIfTrue : valueIfFalse;`
+If you want a component to hide itself, have it `return null`.
 
 #### React Toolkits
 One of the most common ways of building react is using toolkits
