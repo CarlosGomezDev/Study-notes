@@ -1,5 +1,7 @@
 `2020-01-08, Node.js`
 
+[TOC]
+
 # Node.js
 
 https://nodejs.org/en/about/
@@ -58,7 +60,9 @@ The event loop starts the moment Node.js executes your application entry point (
   - All pending operations are executed, but callbacks have a limit, if that limit is reached, the rest of the callbacks are left waiting for the next tick.
   - Any of those operations may schedule _more_ operations, for example you can be processing events in the poll phase, while the kernel is dropping more callbacks to the poll queue, so it's possible that _long running callbacks can allow the poll phase to run much longer than a timer's threshold_.
 
-**1. Timers**: A timer specifies the **threshold** _after which_ a provided callback _may be executed_, so timers are **not exact**. Timers callbacks will be scheduled as soon as possible **after** timer has expired, and OS scheduling or running other callbacks can _delay them even more_.
+#### **1. Timers**
+
+A timer specifies the **threshold** _after which_ a provided callback _may be executed_, so timers are **not exact**. Timers callbacks will be scheduled as soon as possible **after** timer has expired, and OS scheduling or running other callbacks can _delay them even more_.
 Technically, the _poll phase_ controls when timers are executed (see example below).
 
 - These functions are `setTimeout()` and `setInterval()` provided by the core _timers module_. The _event loop_ also updates its own time here.
@@ -111,21 +115,27 @@ someAsyncOperation(() => {
 | **Event Loop 2**  | **105ms** | **next loop starts**                                                                                                                                                                           |
 | timer             | 105ms     | timer of 100ms for `console.log` is expired, callback is executed at 105ms.                                                                                                                    |
 
-**2. I/O Callbacks**: phase of non-block I/O operations. Any asynchronous I/O operation returned from the OS with a callback (completed/errored) is processed in this phase, for example TCP error of ECONNREFUSED.
+#### **2. I/O Callbacks**
+
+Phase of non-block I/O operations. Any asynchronous I/O operation returned from the OS with a callback (completed/errored) is processed in this phase, for example TCP error of ECONNREFUSED.
 
 - I/O operations are Asynchronous by default and have Synchronous counterparts, for example `fs.readFile()` vs `fs.readFileSync()`
 
-**3. Idle / Preparation**: housekeeping phase, used to gather information, planning what needs to be executed during the next tick.
+#### **3. Idle / Preparation**
+
+Housekeeping phase, used to gather information, planning what needs to be executed during the next tick.
 There is no mechanism to directly influence this phase.
 
-**4. I/O polling v1**: optional phase, may not happen on every tick.
+#### **4. I/O polling v1**
+
+Optional phase, may not happen on every tick.
 
 - There is an internal `setTimeout()` set at the beginning of this phase, and its delay depends on the state of the application
 - Here all the JavaScript code is executed, from the beginning of the file, it may be code that executes immediately, or a timer for another tick. All callbacks in this phase are called _synchronously_. This is the phase that can _slowdown_ execution if any callback is slow/heavy.
 - If there are any 'setImmediate()` timers scheduled, this phase is skipped to go to _phase 5: check_.
 - If there are no timers and no function, the application waits for callbacks to be added to the callback queue until the internal `setTimeout()` expires.
 
-**4. I/O polling v2**:
+#### **4. I/O polling v2**
 
 1. Calculate how long it should **block** and poll for I/O
 2. Check if there are any expired timers and wrap back to the timer's phase to execute those timers
@@ -133,10 +143,14 @@ There is no mechanism to directly influence this phase.
 4. If no expired timers, and no callbacks in poll queue, check for `setImmediate()` to end **poll** and move into **check**
 5. If no expired timers, no callbacks in poll queue, no `setImmediate()` callbacks, then even loop waits for callbacks to be added to poll queue to execute them immediately (how long does it wait?), and also check for expired timers to wrap back to **timers**
 
-**5. check / `setImmediate()` callbacks**: `setImmediate()` is a special timer that uses a libUV API to schedule callbacks that execute after **poll phase**, during **check phase**.
+#### **5. check / `setImmediate()` callbacks**
+
+`setImmediate()` is a special timer that uses a libUV API to schedule callbacks that execute after **poll phase**, during **check phase**.
 If the poll phase becomes idle and there are `setImmediate()` callbacks, poll will end and continue to the check phase rather than waiting for more poll events.
 
-**6. Close events**: execute any close events, for example a close event of web socket callback `socket.destroy()`, or `process.exit()` execution. This is where the state of the application is cleaned.
+#### **6. Close events**
+
+Execute any close events, for example a close event of web socket callback `socket.destroy()`, or `process.exit()` execution. This is where the state of the application is cleaned.
 
 ### Phases - Important Details
 
