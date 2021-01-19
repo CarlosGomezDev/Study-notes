@@ -1,6 +1,21 @@
 `2020-01-08, Node.js`
 
-[TOC]
+- [Node.js](#nodejs)
+  - [Event Loop](#event-loop)
+    - [Terms and Definitions](#terms-and-definitions)
+    - [Phases - macro-tasks](#phases---macro-tasks)
+      - [**1. Timers**](#--1-timers--)
+      - [**2. I/O Callbacks**](#--2-i-o-callbacks--)
+      - [**3. Idle / Preparation**](#--3-idle---preparation--)
+      - [**4. I/O polling v1**](#--4-i-o-polling-v1--)
+      - [**4. I/O polling v2**](#--4-i-o-polling-v2--)
+      - [**5. check / `setImmediate()` callbacks**](#--5-check----setimmediate----callbacks--)
+      - [**6. Close events**](#--6-close-events--)
+    - [Phases - Important Details](#phases---important-details)
+      - [`process.nextTick()`](#-processnexttick---)
+      - [`setImmediate()` vs `setTimeout()`](#-setimmediate----vs--settimeout---)
+      - [`process.nextTick()` vs `setImmediate()`](#-processnexttick----vs--setimmediate---)
+    - [Event loop lag](#event-loop-lag)
 
 # Node.js
 
