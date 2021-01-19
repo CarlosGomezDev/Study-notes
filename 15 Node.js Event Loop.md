@@ -211,7 +211,7 @@ Event loop lag measures the time span between the scheduling of a callback and i
 
 ![](src/img/15-1.png)
 
-Measure event loop lag: this functions sets a timer for itself, and does this recursively with no stop action, so it will callback to itself infinitely, and will run once per event loop thanks to the `setTimeout()`.
+Measure event loop lag: The function below sets a timer for itself, and does this recursively with no stop action, so it will callback to itself infinitely, and will run once per event loop thanks to the `setTimeout()`.
 
 - We can see that an event loop doing nothing but a single `console.log()` takes around 0.2ms, you can use this a Node.js baseline for an empty event loop.
 - If your program reaches ~30ms, it's worth investigation.

@@ -1,5 +1,5 @@
 `2020-01-18, Node.js child_process, Cluster, Worker Thread`
-https://nodejs.org/api/
+<br>https://nodejs.org/api/
 
 ## child_process module
 
@@ -18,7 +18,7 @@ The `child_process.exec()` method spawns a shell and runs a command within that 
 - **Never pass unsanitized user input to this function. Any input containing shell metacharacters may be used to trigger arbitrary command execution.**
 - `child_process.execSync()` is the synchronous version that blocks the event loop until the spawned process either exits or is terminated.
 
-The `child_process.execFile()` method is similar to `child_process.exec()` except that it spawns the command directly without first spawning a shell by default. This doesn't work on Windows as `.bat` and `.cmd` files cannot be executed without a shell.
+The `child_process.execFile()` method is similar to `child_process.exec()` except that it spawns the command directly without first spawning a shell by default. This doesn't work for `.bat` and `.cmd` file in Windows because they cannot be executed without a shell.
 
 - `child_process.execFileSync()` is the synchronous version that blocks the event loop until the spawned process either exits or is terminated.
 
@@ -43,7 +43,7 @@ A single instance of Node.js runs in a single thread. To take advantage of multi
 - The clusters are spawned using the `child_process.fork()` method, so that they can communicate with the parent via IPC and pass server handles back and forth.
 - The cluster module supports two methods of distributing incoming connections:
   - Round-robin (default on every platform except Windows): the master cluster listens on a port, accepts new connections and distributes them across the clusters in a round-robin fashion, with some built-in smarts to avoid overloading a cluster.
-  - The second approach is where the master cluster creates the listen socket and sends it to interested clusters. The workers then accept incoming connections directly. This should be faster in theory, but in practice loads over 70% have been observed using 2 out of 8 clusters.
+  - The second approach is where the master cluster creates the listen socket and sends it to interested clusters. The clusters then accept incoming connections directly. This should be faster in theory, but in practice loads over 70% have been observed using only 2 out of 8 clusters.
 - Node.js does not provide routing logic. It is, therefore important to design an application such that it does not rely too heavily on in-memory data objects for things like sessions and login.
 
 Clusters are all separate processes, and can be killed or re-spawned freely, without affecting other clusters. If there are some clusters still alive, the server will continue to accept connections. But if no clusters are alive, existing connections will be dropped and new connections will be refused.
