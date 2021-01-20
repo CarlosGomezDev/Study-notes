@@ -2,8 +2,9 @@
 
 # Stream
 
-A `stream` is an abstract interface on the stream module for streaming data in Node.js. The stream module is useful for creating new stream instances, but it is not necessary to consume streams. You can use existing streams or create new types of streams.
+A `stream` is an abstract interface on the stream module for streaming data in Node.js, in essence they are a data-handling method used to read/write input/output. The stream module is useful for creating new stream instances, but it is not necessary to consume streams. You can use existing streams or create new types of streams. All streams are instances of `EventEmitter`.
 
+- Emitters are objects that emit named events, and cause `function` objects to be called.
 - Besides creating streams, this module has utility functions like `stream.pipeline()`, `stream.finished()`, `stream.Readable.from()`, and `stream.addAbortSignal()`.
 - In v15, the `stream/promises` API was added as an alternative set of asynchronous utility functions for streams that return `Promise` objects rather than using callbacks. `require('stream/promises')` or `require('stream').promises`.
 
@@ -74,7 +75,7 @@ Examples of `Readable` streams include:
 
 It is recommended to choose _one_ method to consume `Readable` streams, and _never_ use multiple methods to consume a single stream, because it can lead to unintuitive behavior.
 
-- `readble.pipe()` is the top choice for being easy to implement.
+- `readable.pipe()` is the top choice for being easy to implement.
 - Alternatives for more fine-grained control are `EventEmitter` API, `readable.on('readable')`/`readable.read()`, and `readable.pause()`/`readable.resume()`
 
 ### Reading Modes
