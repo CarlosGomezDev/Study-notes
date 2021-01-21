@@ -2,14 +2,18 @@
 
 # Git
 
-### View local commits
+## View local commits
 
 To view commit history on local copy, this might or might not be in sync with github
 `git reflog` <br>
 `git log` <br>
 `git log --oneline` <br>
 
-### Remove commit from github
+## Check git status on all sub-folders
+
+`find . -type d -name '.git' | while read dir ; do sh -c "cd $dir/../ && echo -e \"\nGIT STATUS IN ${dir//\.git/}\" && git status -s" ; done`
+
+## Remove commit from github
 
 `git reset --hard [sha1]` choose the commit you want to be on, this downgrades local copy
 `git reset [sha1]` choose the commit you want to be on, this downgrades local copy
@@ -22,12 +26,12 @@ To view commit history on local copy, this might or might not be in sync with gi
 
 `git push origin -f` this pushes the downgraded copy to github
 
-### Remove commits from local
+## Remove commits from local
 
 `git fetch --all` grab latest github commits
 `git reset --hard origin/[branch_name]` downgrade your local "main" branch to whatever github has
 
-### Delete commit history, keep latest code version.
+## Delete commit history, keep latest code version.
 
 Checkout <br>
 `git checkout --orphan latest_branch` <br>
