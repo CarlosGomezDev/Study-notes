@@ -9,6 +9,16 @@ To view commit history on local copy, this might or might not be in sync with gi
 `git log` <br>
 `git log --oneline` <br>
 
+## Delete Local Branch
+
+`git branch -d [branch_name]`
+
+## Delete brach on github and reupload local as new branch
+
+`git push origin :[branch_name]`, notice the <empty>:<branch_name>, this will push <emptyness> to github<br>
+`git branch -m [branch_name] [new_brach_name]`, if you want to rename local brach before pushing<br>
+`git push origin [branch_name]`, push local branch to github<br>
+
 ## Check git status on all sub-folders
 
 `find . -type d -name '.git' | while read dir ; do sh -c "cd $dir/../ && echo -e \"\nGIT STATUS IN ${dir//\.git/}\" && git status -s" ; done`
