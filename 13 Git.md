@@ -78,3 +78,7 @@ open `git bash` in `%userprofile%\.gnupg` <br>
 
 `git branch -d [branch_name]`
 `git push origin --delete [branch-name]`
+
+## Ammend git commit date
+
+`git commit --amend --no-edit --date="Fri Nov 6 20:00:00 2015 -0600"`, this is for the last commit on a branch
