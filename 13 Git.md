@@ -68,8 +68,13 @@ Compress and back the whole `.gnupg` folder <br>
 
 ### Restore
 
-Decompress archive and place `.gnuph` folder in `%userprofile%`
+Decompress archive and place `.gnuph` folder in `%userprofile%` <br>
 open `git bash` in `%userprofile%\.gnupg` <br>
 `gpg --import < priv-backup.asc`, import private cert (need passphrase)<br>
 `gpg --import < pub-backup.asc`, import public cert <br>
 `gpg --import-ownertrust < trust-backup.asc`, import ownertrust <br>
+
+## Delete Brach from local and remove
+
+`git branch -d [branch_name]`
+`git push origin --delete [branch-name]`
