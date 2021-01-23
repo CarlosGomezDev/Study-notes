@@ -55,3 +55,21 @@ Rename the current branch to main <br>
 `git branch -m main` <br>
 Finally, force update your repository <br>
 `git push -f origin master` <br>
+
+## Backup and Restore GPG
+
+### Backup
+
+Open `git bash` in `%userprofile%\.gnupg` <br>
+`gpg --armor --export > pub-backup.asc`, export public cert <br>
+`gpg --armor --export-secret-keys > priv-backup.asc`, export secret cert (need passphrase)<br>
+`gpg --armor --export-ownertrust > trust-backup.asc`, export ownertrust <br>
+Compress and back the whole `.gnupg` folder <br>
+
+### Restore
+
+Decompress archive and place `.gnuph` folder in `%userprofile%`
+open `git bash` in `%userprofile%\.gnupg` <br>
+`gpg --import < priv-backup.asc`, import private cert (need passphrase)<br>
+`gpg --import < pub-backup.asc`, import public cert <br>
+`gpg --import-ownertrust < trust-backup.asc`, import ownertrust <br>
