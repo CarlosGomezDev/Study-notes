@@ -29,6 +29,10 @@ setInterval(tick, 1000);
 ```
 
 ## Building blocks of React apps
+
+Whenever conditions become too complex, it might be a good time to extract a component.
+If a map() body is too nested, it might be a good time to extract a component.
+
 ### Elements
 HTML elements written in JSX, basicaly descriptions of what you want to see rendered on screen.
 An element is the most atomic unit of a React application.
