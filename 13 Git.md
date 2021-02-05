@@ -54,7 +54,7 @@ Delete the branch <br>
 Rename the current branch to main <br>
 `git branch -m main` <br>
 Finally, force update your repository <br>
-`git push -f origin master` <br>
+`git push -f origin main` <br>
 
 ## Backup and Restore GPG
 
