@@ -1,4 +1,4 @@
-`2020-01-10, Functional Approach JS, 23:00`
+`2021-01-10, Functional Approach JS, 23:00`
 
 ## Functional Programming:
 
@@ -86,7 +86,7 @@ console.log('good', divideSafe(3, 0));
 console.log('good2', divideSafe(3, 5));
 ```
 
-`2020-01-11, Continuation, 19:00`
+`2021-01-11, Continuation, 19:00`
 
 ### JavaScript, the functional parts
 

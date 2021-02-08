@@ -1,4 +1,4 @@
-`2020-01-04, Pure Functions, 12:00`
+`2021-01-04, Pure Functions, 12:00`
 
 Pure Function is a function that given the same input, always returns the same output, and it only uses the input provided without affecting anything external to it, it's basically analogous to a mathematical function function. A pure function also lack side-effects, meaning, it doesn't affect anything outside of it, and treats all inputs as immutable.
 

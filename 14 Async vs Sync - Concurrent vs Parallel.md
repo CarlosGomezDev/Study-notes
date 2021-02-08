@@ -1,4 +1,4 @@
-`2020-01-18, Async vs Sync - Concurrent vs Parallel`
+`2021-01-18, Async vs Sync - Concurrent vs Parallel`
 
 # Async vs Sync - Concurrent vs Parallel
 
